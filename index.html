@@ -1810,8 +1810,73 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.2; }
   50%      { transform: translateY(-22px); opacity: 1; }
 }
 
+/* ---------- Final Night promo code cards (added 2026-07-19) ---------- */
+.bash-codes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: .95rem;
+  margin: 0 0 .35rem;
+}
+.bash-code-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .15rem;
+  padding: 1.05rem 1.25rem;
+  border-radius: 18px;
+  text-decoration: none;
+  border: 1.5px solid rgba(244,198,92,.55);
+  background: linear-gradient(150deg, rgba(255,45,141,.16), rgba(18,10,18,.6) 62%);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  animation: bashUnitGlow 3s ease-in-out infinite;
+}
+.bash-code-card:nth-child(2) { animation-delay: .6s; }
+.bash-code-card:hover,
+.bash-code-card:focus-visible {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--bash-pink-soft);
+  box-shadow: 0 12px 38px rgba(255,45,141,.45), 0 0 26px rgba(244,198,92,.35);
+  outline: none;
+}
+.bash-code-card__off {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  line-height: 1.05;
+  background: linear-gradient(92deg, var(--bash-gold) 0%, #fff3d6 30%, var(--bash-pink-soft) 65%, var(--bash-pink) 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: bashShimmer 5.5s linear infinite;
+  filter: drop-shadow(0 0 14px rgba(255,45,141,.35));
+}
+.bash-code-card__what {
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bash-champagne);
+}
+.bash-code-card__code {
+  margin-top: .5rem;
+  padding: .32rem .8rem;
+  border-radius: 999px;
+  border: 1.5px dashed rgba(244,198,92,.65);
+  background: rgba(18,10,18,.5);
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--bash-gold);
+  text-shadow: 0 0 12px rgba(244,198,92,.5);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
+  .bash-code-card { align-items: center; text-align: center; }
   .bash-hero { min-height: 0; padding-top: 4rem; padding-bottom: 4.5rem; }
   .bash-inner { grid-template-columns: 1fr; text-align: center; }
   .bash-sub, .bash-secondary { margin-left: auto; margin-right: auto; }
@@ -1821,6 +1886,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.2; }
 }
 @media (max-width: 560px) {
   .bash-promo__list { grid-template-columns: 1fr; }
+  .bash-codes { grid-template-columns: 1fr; }
   .bash-countdown { flex-wrap: wrap; }
   .bash-countdown__label { width: 100%; text-align: center; margin: 0 0 .2rem; }
   .bash-countdown__unit { min-width: 58px; flex: 1 1 0; }
@@ -1881,7 +1947,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.2; }
 </div>
 
 <!-- ================= BANNER MARKUP STARTS HERE ================= -->
-<section class="bash-hero" id="bashHero" aria-label="NURA Peptides Night celebration banner">
+<section class="bash-hero" id="bashHero" aria-label="Final Night of Heather's Birthday Bash celebration banner">
 
   <!-- Layered background decor (decorative only) -->
   <div class="bash-orb bash-orb--pink" data-parallax="18" aria-hidden="true"></div>
@@ -1910,38 +1976,43 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.2; }
     <div class="bash-content">
 
       <p class="bash-announce bash-reveal" style="--d:.1s">
-        ⭐ Vendor Spotlight — NURA Peptides ⭐
+        🎂 The Grand Finale — Heather&rsquo;s 54th Birthday Bash 🎂
       </p>
 
       <h1 class="bash-headline bash-reveal" style="--d:.25s">
-        🧬 Welcome to <span class="bash-gradient-text">NURA Peptides&nbsp;Night!</span> ✨
+        🎉 It&rsquo;s the <span class="bash-gradient-text">Final Night of the Birthday&nbsp;Bash!</span> ✨
       </h1>
 
       <p class="bash-sub bash-reveal" style="--d:.4s">
-        ✨ <strong>Tonight we&rsquo;re spotlighting NURA Peptides.</strong>
-        Premium research peptides — join us live and save 25%
-        with our exclusive Glow Lab code.
+        ✨ <strong>One last night — and the biggest glow deals of the whole bash.</strong>
+        Celebrate with my very own Glow Lab Protocols line
+        before the candles go out!
       </p>
 
-      <div class="bash-promo bash-reveal" style="--d:.55s">
-        <h2 class="bash-promo__title">💎 25% Off — Code: GLOWLAB25</h2>
-        <ul class="bash-promo__list">
-          <li>🧬 Premium research peptides</li>
-          <li>🔬 Quality-focused catalog</li>
-          <li>💎 25% off with code GLOWLAB25</li>
-          <li>⭐ Glow Lab vendor spotlight</li>
-        </ul>
-        <p class="bash-promo__note">✨ One incredible night of science with our Glow community.</p>
+      <div class="bash-codes bash-reveal" style="--d:.55s">
+        <a class="bash-code-card" href="https://glowlabprotocols.com" target="_blank" rel="noopener" aria-label="54% off serums with code BIRTHDAY54 at GlowLabProtocols.com">
+          <span class="bash-code-card__off">54% OFF</span>
+          <span class="bash-code-card__what">🌟 Serums</span>
+          <span class="bash-code-card__code">Code: BIRTHDAY54</span>
+        </a>
+        <a class="bash-code-card" href="https://glowlabprotocols.com" target="_blank" rel="noopener" aria-label="30% off peptides with code GLOWLAB at GlowLabProtocols.com">
+          <span class="bash-code-card__off">30% OFF</span>
+          <span class="bash-code-card__what">🧬 Peptides</span>
+          <span class="bash-code-card__code">Code: GLOWLAB</span>
+        </a>
       </div>
 
+      <p class="bash-promo__note bash-reveal" style="--d:.7s; margin:0 0 1.5rem;">
+        🎂 Final night only — these birthday deals disappear when the party ends!
+      </p>
 
       <div class="bash-cta-row bash-reveal" style="--d:.85s">
-        <a class="bash-cta" href="https://nurapeptide.com" target="_blank" rel="noopener">
-          🧬 Shop NURA Peptides
+        <a class="bash-cta" href="https://glowlabprotocols.com" target="_blank" rel="noopener">
+          💖 Shop GlowLabProtocols.com
         </a>
         <p class="bash-secondary">
-          Don&rsquo;t miss NURA Peptides Night.
-          Join us live and celebrate the science of the glow!
+          My personal peptide serum line — made by me, for our
+          Glow community. Don&rsquo;t miss the final night!
         </p>
       </div>
 
@@ -1951,8 +2022,8 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.2; }
     <div class="bash-visual" id="bashVisual" data-parallax="10" aria-hidden="true">
 
       <div class="bash-medallion">
-        <span class="bash-medallion__num" style="font-size:clamp(2rem, 4.2vw, 3.1rem); letter-spacing:.08em;">NURA</span>
-        <span class="bash-medallion__word">Peptides Night</span>
+        <span class="bash-medallion__num">54</span>
+        <span class="bash-medallion__word">Final Night</span>
       </div>
 
       <!-- Bouncing gift boxes -->
